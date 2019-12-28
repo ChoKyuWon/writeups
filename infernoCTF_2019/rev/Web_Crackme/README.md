@@ -1,6 +1,6 @@
 In chrome developer tool, I can see it use WASM(WebAssembly.)  
 The page's script is like this:
-```
+```js
 const wabtCompiler = WabtModule();
 async function loadText(url) {
     let response = await fetch(url, {cache: "no-cache"});
@@ -32,7 +32,7 @@ async function loadText(url) {
 It look get js and WASM in other url, so I capture the traffic by Fiddler4.  
 I can see two request on ```/challenge/script.js``` and ```/challenge/assembly.wat```.  
 In browser console, type this code:  
-```
+```js
 async function loadText(url) {
     let response = await fetch(url, {cache: "no-cache"});
     let data = await response.text()
@@ -46,7 +46,7 @@ const [wat, js] = await Promise.all([
 and you can read wat and js.  
 Some value is hardcoded on wasm, and script.js compare the value and input.  
 Analyze the wasm code is one way to know the value, but I use browser console.  
-```
+```js
 const wabtCompiler = WabtModule();
 async function loadText(url) {
     let response = await fetch(url, {cache: "no-cache"});

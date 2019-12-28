@@ -3,7 +3,7 @@ So I use python-exe-unpacker.
 There are so many package, but main logic is in emco file.  
 emco file has no signatue and extended, but you can simply read it by add signature on file header and add extend ```.pyc```.  
 Main logic is like this:  
-```
+```python
 def encrypt(file_path):
     im = Image.open(file_path).convert('RGB')
     width, height = im.size
@@ -30,7 +30,7 @@ def encrypt(file_path):
 ```
 I do some test and get sure that logic is only use for app and other package is just trick.(like all crypto, ssl, ftp and other.)  
 So I write decrypt function in python.
-```
+```python
 def decrypt(file_path):
     im = Image.open(file_path).convert('RGB')
     pixels = list(im.getdata())
