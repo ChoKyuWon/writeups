@@ -44,6 +44,49 @@ const [wat, js] = await Promise.all([
 ]);
 ```
 and you can read wat and js.  
+wasm code is like this:
+```
+(module
+  (memory 1)
+  (func $myFunction1 (result i32)
+    (i32.store
+      (i32.const 0)
+      (i32.const 0xd359beef) 
+    )
+    (i32.store
+      (i32.const 3)
+      (i32.const 0x5579) 
+    )
+	(i32.store
+	  (i32.const 5)
+	  (i32.const 0x66) 
+	)
+    (i32.load
+      (i32.const 2)
+    )
+  )
+
+  (func $myFunction2 (result i32)
+    (i32.store
+      (i32.const 0)
+      (i32.const 0xc939ba2d) 
+    )
+    (i32.store
+      (i32.const 3)
+      (i32.const 0x7165) 
+    )
+	(i32.store16
+	  (i32.const 4)
+	  (i32.const 0x2D4D) 
+	)
+    (i32.load
+      (i32.const 2)
+    )
+  )
+  (export "myFunction1" (func $myFunction1))
+  (export "myFunction2" (func $myFunction2))
+)
+```
 Some value is hardcoded on wasm, and script.js compare the value and input.  
 Analyze the wasm code is one way to know the value, but I use browser console.  
 ```js
