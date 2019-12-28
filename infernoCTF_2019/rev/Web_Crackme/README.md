@@ -54,8 +54,8 @@ async function loadText(url) {
     return data;
 }
 const [wat, js] = await Promise.all([
-                loadText(example + '/assembly.wat'),
-                loadText(example + '/script.js'),
+                loadText('/challenge/assembly.wat'),
+                loadText('/challenge/script.js'),
 ]);
 const parsedWat = wabtCompiler.parseWat("", this.wat);
 const buffer = parsedWat.toBinary({}).buffer;
