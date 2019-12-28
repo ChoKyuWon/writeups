@@ -45,7 +45,7 @@ const [wat, js] = await Promise.all([
 ```
 and you can read wat and js.  
 wasm code is like this:
-```
+```wasm
 (module
   (memory 1)
   (func $myFunction1 (result i32)
