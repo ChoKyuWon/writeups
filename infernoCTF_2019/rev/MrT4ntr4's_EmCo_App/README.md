@@ -5,7 +5,7 @@ Find another ```.pyc``` file, and compare it to ```emco``` file, and signature i
 ![original](pyc.PNG)
 ![emco](nonpyc.PNG)  
 Make 2nd file like 1st file.  
-Add this signature on ```emco``` and rename it ```emco.pyc```, and use ````uncompyle6``` to decompile the pyc file.  
+Add this signature on ```emco``` and rename it ```emco.pyc```, and use ```uncompyle6``` to decompile the pyc file.  
 Main logic is like this:  
 ```python
 def encrypt(file_path):
