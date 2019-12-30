@@ -2,8 +2,8 @@ When I excute the file and attack debugger to it, I can find it was written by p
 So I use ```python-exe-unpacker```. There are so many package, but main logic is in ```emco``` file.  
 ```emco``` has no signatue and extended, but I can simply read it by add signature on file header and add extend ```.pyc``` and decompile it. 
 Find another ```.pyc``` file, and compare it to ```emco``` file, and signature is ```03 F3 0D 0A 00 00 00 00```.(It may different on other project)  
-![original](pyc.png)
-![emco](nonpyc.png)
+![original](pyc.PNG)
+![emco](nonpyc.PNG)
 Make 2nd file like 1st file.  
 Add this signature on ```emco``` and rename it ```emco.pyc```, and use ````uncompyle6``` to decompile the pyc file.  
 Main logic is like this:  
